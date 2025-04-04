@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stay at RK Regency with our luxurious, spacious rooms. Book now to enjoy comfort and modern amenities.">
+    <title>Hotel Rooms - RK Regency</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            height: auto;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            font-size: 20px;
+        }
+
+        header nav img {
+            height: 100px;
+            width: auto;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        header nav h1{
+            /* color: red; */
+            transform: translate(-50);
+        }
+
+        header nav ul li a:hover {
+            color: #FFD700;
+        }
+
+        .rooms {
+            padding: 100px 20px;
+            text-align: center;
+            background: #f5f5f5;
+        }
+
+        .rooms h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .room-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .room {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .room:hover {
+            transform: scale(1.05);
+        }
+
+        .room img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .room h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .room p {
+            font-size: 14px;
+            color: gray;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            display: block;
+            font-size: 18px;
+            font-weight: bold;
+            color: #c0392b;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            text-decoration: none;
+            background: #c0392b;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #a52a2a;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .room-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .room {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="https://static.wixstatic.com/media/7c49ed_7adc63083a3743eeb6b588e60d288f02~mv2.png/v1/fill/w_200,h_212,al_c,q_85,usm_2.00_1.00_0.00,enc_avif,quality_auto/LOGO%2520NO%2520BACKGROUND_edited.png"
+                alt="Hotel Logo">
+            <h1>HOTEL R.K REGENCY</h1>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Banquets</a></li>
+                <li><a href="#">Rooms</a></li>
+                <li><a href="#">Enquire with Us</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="rooms">
+        <h1>Our Luxury Rooms</h1>
+
+        <div class="room-container">
+            <div class="room">
+                <img src="https://media.istockphoto.com/id/1452529483/photo/3d-render-of-luxury-hotel-room.jpg?s=1024x1024&w=is&k=20&c=MgAhtLDywMfFflHFhL634qp6sNNHa6PC5f6F4-rKyRo=" alt="Luxury Room">
+                <h2>Luxury Room</h2>
+                <p>Experience comfort and luxury with modern amenities.</p>
+                <span class="price">₹14,999 / night</span>
+                <a href="booking.html" class="btn">Book Now</a>
+            </div>
+
+            <div class="room">
+                <img src="https://www.oberoihotels.com/-/media/oberoi-hotels/website-images/the-oberoi-new-delhi/room-and-suites/deluxe-room/detail/deluxe-room-1.jpg" alt="Deluxe Room">
+                <h2>Deluxe Room</h2>
+                <p>Spacious and well-furnished rooms for a comfortable stay.</p>
+                <span class="price">₹4,999 / night</span>
+                <a href="booking.html" class="btn">Book Now</a>
+            </div>
+
+            <div class="room">
+                <img src="https://media-cdn.tripadvisor.com/media/photo-s/02/8a/e6/d6/filename-120409-02-jpg.jpg" alt="Suite Room">
+                <h2>Suite Room</h2>
+                <p>Enjoy a premium experience with top-class facilities.</p>
+                <span class="price">₹9,999 / night</span>
+                <a href="booking.html" class="btn">Book Now</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Optional footer content can be added here -->
+    </footer>
+</body>
+
+</html>
