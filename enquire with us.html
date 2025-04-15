@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking Enquiry</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            height: auto;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            font-size: 20px;
+        }
+
+        header nav img {
+            height: 100px;
+            width: auto;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        header nav h1{
+            /* color: red; */
+            transform: translate(-50);
+        }
+
+        header nav ul li a:hover {
+            color: #FFD700;
+        }
+
+       
+    .enquiry-form {
+        width: 50%;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .enquiry-form h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+    
+    input, select, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+    
+    button {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #45a049;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="https://static.wixstatic.com/media/7c49ed_7adc63083a3743eeb6b588e60d288f02~mv2.png/v1/fill/w_200,h_212,al_c,q_85,usm_2.00_1.00_0.00,enc_avif,quality_auto/LOGO%2520NO%2520BACKGROUND_edited.png"
+                alt="Hotel Logo">
+            <h1>HOTEL R.K REGENCY</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="banquets.html">Banquets</a></li>
+                <li><a href="room.html">Rooms</a></li>
+                <li><a href="">Enquire with Us</a></li>
+                <li><a href="about us.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="enquiry-form">
+        <h2>Enquire with Us</h2>
+        <form action="submit_enquiry.php" method="POST">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone">Phone Number (optional):</label>
+            <input type="text" id="phone" name="phone">
+            
+            <label for="checkin">Preferred Check-in Date:</label>
+            <input type="date" id="checkin" name="checkin_date" required>
+            
+            <label for="checkout">Preferred Check-out Date:</label>
+            <input type="date" id="checkout" name="checkout_date" required>
+            
+            <label for="room">Room Type:</label>
+            <select id="room" name="room_type" required>
+                <option value="single">Single</option>
+                <option value="double">Double</option>
+                <option value="suite">Suite</option>
+            </select>
+            
+            <label for="guests">Number of Guests:</label>
+            <input type="number" id="guests" name="guests" required min="1">
+            
+            <label for="message">Additional Requests or Questions:</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+            
+            <button type="submit">Submit Enquiry</button>
+        </form>
+    </div>
+</body>
+</html>
