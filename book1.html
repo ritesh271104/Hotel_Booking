@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Room Booking Registration</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
-        /* General Reset */
         * {
             margin: 0;
             padding: 0;
@@ -15,14 +13,12 @@
             font-family: 'Arial', sans-serif;
         }
 
-        /* Body Styling */
         body {
             background-color: #f4f4f4;
             color: #333;
             line-height: 1.6;
         }
 
-        /* Header Section */
         header {
             background-color: #1a1a1a;
             color: white;
@@ -35,7 +31,6 @@
             letter-spacing: 2px;
         }
 
-        /* Booking Registration Section */
         .booking-registration {
             background-color: #fff;
             padding: 40px;
@@ -52,7 +47,6 @@
             color: #2c3e50;
         }
 
-        /* Form Group Styling */
         .form-group {
             margin-bottom: 20px;
         }
@@ -100,7 +94,55 @@
             background-color: #e67e22;
         }
 
-        /* Footer Styling */
+        .booking-container {
+            display: none;
+            margin-top: 40px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .counter {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .counter button {
+            padding: 5px 10px;
+        }
+
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .toggle-container input {
+            margin-right: 10px;
+        }
+
+        button.done {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
         footer {
             text-align: center;
             padding: 20px;
@@ -118,13 +160,15 @@
 <body>
     <header>
         <div class="logo">
-            <h1>Luxury Hotel</h1>
+            <h1>HOTEL R.K REGENCY</h1>
         </div>
     </header>
 
     <section class="booking-registration">
         <h2>Book Your Stay</h2>
-        <form class="registration-form">
+
+
+        <form class="registration-form" action="registration.php" method="post">
             <div class="form-group">
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="name" placeholder="Enter your full name" required>
@@ -159,12 +203,90 @@
             </div>
 
             <div class="form-group">
-                <label for="guests">Number of Guests</label>
-                <select name="Number of Guests" id="guests"required>
-                    <option value="Adult">Adult</option>
-                    <option value="Children">Children</option>
-                    <input type="number" id="guests" name="guests" min="1
-                    
+                <label for="room-type">Number of Guest</label>
+                <select name="guests" id="guests" required onclick="guest()">
+                    <option value=""> number of guests</option>
                 </select>
 
-                
+            </div>
+            <input type="submit" placeholder="Submit" style="transform: translateX(200px); font-size: 30px;">
+
+
+            <div class="booking-container" id="booking-container">
+                <div class="input-group">
+                    <label>Adults</label>
+                    <div class="counter">
+                        <button onclick="changeCount('adults', -1)">-</button>
+                        <span id="adults">3</span>
+                        <button onclick="changeCount('adults', 1)">+</button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Children</label>
+                    <div class="counter">
+                        <button onclick="changeCount('children', -1)">-</button>
+                        <span id="children">1</span>
+                        <button onclick="changeCount('children', 1)">+</button>
+                    </div>
+                </div>
+                <button class="done" id="done" onclick="done()">Done</button>
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Luxury Hotel. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function changeCount(type, delta) {
+            const el = document.getElementById(type);
+            let count = parseInt(el.textContent);
+            count = Math.max(0, count + delta);
+            el.textContent = count;
+        }
+    </script>
+    <script>
+        function guest() {
+            document.getElementById('booking-container').style.display = "block";
+        }
+
+    </script>
+    <script>
+        function changeCount(type, delta) {
+            const el = document.getElementById(type);
+            let count = parseInt(el.textContent);
+            count = Math.max(0, count + delta);
+            el.textContent = count;
+        }
+
+        function guest() {
+            document.getElementById('booking-container').style.display = "block";
+        }
+
+        function done() {
+            const adults = document.getElementById('adults').textContent;
+            const children = document.getElementById('children').textContent;
+
+            const guestSelect = document.getElementById('guests');
+
+            // Clear previous options
+            guestSelect.innerHTML = "";
+
+            // Create and add the new option
+            const option = document.createElement("option");
+            option.value = `adults:${adults},children:${children}`;
+            option.text = `${adults} Adult${adults != 1 ? "s" : ""}, ${children} Child${children != 1 ? "ren" : ""}`;
+            option.selected = true;
+
+            guestSelect.appendChild(option);
+
+            // Hide the container again
+            document.getElementById('booking-container').style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>
