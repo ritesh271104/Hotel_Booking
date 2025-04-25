@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hotel & Banquet Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f8f8f8;
+    }
+    .container {
+      max-width: 600px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #007BFF;
+      color: white;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>HOTEL R.K REGENCY BANQUET BOOKING</h2>
+  <form id="bookingForm">
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" required>
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" required>
+
+    <label for="roomType">Hotel Room Type:</label>
+    <select id="roomType">
+      <option value="none">No Room</option>
+      <option value="single">Single Room</option>
+      <option value="double">Double Room</option>
+      <option value="suite">Suite</option>
+    </select>
+
+    <label for="hallType">Banquet Hall:</label>
+    <select id="hallType">
+      <option value="none">No Banquet Hall</option>
+      <option value="Grand Ballroom">Grand Ballroom(500 Guest)</option>
+      <option value="Garden Suite">Garden Suite(400)</option>
+      <option value="Royal Hall">Royal Hall(600 Guest)</option>
+    </select>
+
+    <label for="checkIn">Check-in Date:</label>
+    <input type="date" id="checkIn">
+
+    <label for="checkOut">Check-out Date:</label>
+    <input type="date" id="checkOut">
+
+    <button type="submit">Book Now</button>
+  </form>
+</div>
+
+<script>
+  document.getElementById("bookingForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const room = document.getElementById("roomType").value;
+    const hall = document.getElementById("hallType").value;
+    const checkIn = document.getElementById("checkIn").value;
+    const checkOut = document.getElementById("checkOut").value;
+
+    alert(`Booking Submitted!\n\nName: ${name}\nEmail: ${email}\nRoom: ${room}\nHall: ${hall}\nCheck-in: ${checkIn}\nCheck-out: ${checkOut}`);
+    // In a real system, you'd send this data to a server here
+  });
+</script>
+
+</body>
+</html>
