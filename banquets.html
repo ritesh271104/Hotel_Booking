@@ -103,6 +103,66 @@
             font-size: 16px;
             padding: 0 20px 20px;
         }
+        .modal {
+      display: none;
+      position: fixed;
+      top: 10%;
+      left: 20%;
+      width: 60%;
+      background: white;
+      border: 2px solid #000;
+      z-index: 1000;
+      padding: 20px;
+    }
+    .modal img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+    }
+    .gallery {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .gallery img {
+      width: 100px;
+      height: 60px;
+      object-fit: cover;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+    .gallery img.active {
+      border-color: #4CAF50;
+    }
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 999;
+    }
+    
+    .price {
+            display: block;
+            font-size: 18px;
+            font-weight: bold;
+            color: #c0392b;
+            margin-bottom: 10px;
+        }
+        .btn {
+            text-decoration: none;
+            background: #cf1f4e;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #cf1f4e;
+        }
+
         
         /* Footer Section */
         .footer {
@@ -143,18 +203,27 @@
             <img src="https://padmahotelsemarang.com/images/events/pandanaran-grand-ballroom-thumb1.jpg" alt="Banquet Hall 1" class="banquet-img">
             <h2>Grand Ballroom</h2>
             <p class="description">A luxurious ballroom with the capacity to host up to 500 guests. Perfect for weddings and large gatherings.</p>
+            <a href="Visit1.html" class="btn">visit</a>
+            <span class="price">₹95,000</span>
+            <a href="book banquets hall.html" class="btn">Book Now</a>
         </div>
 
         <div class="banquet-hall">
             <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/543806766.jpg?k=7e33db4a096f2787c40d1c96e6d9e43f69be4008c617442889362e107233f7b1&o=&hp=1" alt="Banquet Hall 2" class="banquet-img">
             <h2>Garden Suite</h2>
-            <p class="description">A beautiful indoor-outdoor venue with a serene garden view, ideal for intimate celebrations.</p>
+            <p class="description">A beautiful indoor-outdoor venue with a serene garden view & capacity to host up to 400 guest, ideal for intimate celebrations.</p>
+            <a href="Visit2.html" class="btn">visit</a>
+            <span class="price">₹1,15,000</span>
+            <a href="book banquets hall.html" class="btn">Book Now</a>
         </div>
 
         <div class="banquet-hall">
             <img src="https://images.stockcake.com/public/6/6/a/66a4c749-4134-404c-8631-3b39b3820175_large/elegant-gala-dinner-stockcake.jpg" alt="Banquet Hall 3" class="banquet-img">
             <h2>Royal Hall</h2>
-            <p class="description">A stunning hall with elegant décor, perfect for corporate events, conferences, and gala dinners.</p>
+            <p class="description">A stunning hall with elegant décor, perfect for corporate events, conferences,and gala dinners with the capacity to host up to 600 guest</p>
+            <a href="Visit3.html" class="btn">visit</a>
+            <span class="price">₹1,50,000</span>
+            <a href="book banquets hall.html" class="btn">Book Now</a>
             </div>
     </section>
 
