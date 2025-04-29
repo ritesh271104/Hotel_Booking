@@ -2,135 +2,129 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hotel Booking - R.K Regency</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotel Booking - R.K Regency</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
 
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-        /* Navbar */
-        .navbar-brand img {
-            height: 50px;
-            margin-right: 10px;
-        }
+    .navbar-brand img {
+      height: 50px;
+      margin-right: 10px;
+    }
 
-        /* Full-screen Hero Section */
-        .hero {
-            background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1950&q=80') no-repeat center center;
-            background-size: cover;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
+    .hero {
+      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1950&q=80') no-repeat center center;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
 
-        }
+    .hero h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
 
-        .hero h2 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
+    .availability-form {
+      margin-top: 30px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+      color: white;
+    }
 
-        /* Footer */
-        footer a {
-            text-decoration: none;
-        }
-
-        /* .container {
-             transform: translate(300px,-200px); 
-
-        }
-        .container1{
-            transform: translate(-650px,100px);
-
-        } */
-
-        
-    </style>
+    footer a {
+      text-decoration: none;
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="https://static.wixstatic.com/media/7c49ed_7adc63083a3743eeb6b588e60d288f02~mv2.png/v1/fill/w_200,h_212,al_c,q_85,usm_2.00_1.00_0.00,enc_avif,quality_auto/LOGO%2520NO%2520BACKGROUND_edited.png"
-                alt="Hotel Logo">
-            <span class="fw-bold">HOTEL R.K REGENCY</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="banquets.html">Banquets</a></li>
-                <li class="nav-item"><a class="nav-link" href="room.html">Rooms</a></li>
-                <li class="nav-item"><a class="nav-link" href="enquire with us.html">Enquire with Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="about us.html">About Us</a></li>
-            </ul>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="https://static.wixstatic.com/media/7c49ed_7adc63083a3743eeb6b588e60d288f02~mv2.png/v1/fill/w_200,h_212,al_c,q_85,usm_2.00_1.00_0.00,enc_avif,quality_auto/LOGO%2520NO%2520BACKGROUND_edited.png"
+        alt="Hotel Logo">
+      <span class="fw-bold">HOTEL R.K REGENCY</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="banquets.html">Banquets</a></li>
+        <li class="nav-item"><a class="nav-link" href="room.html">Rooms</a></li>
+        <li class="nav-item"><a class="nav-link" href="enquire with us.html">Enquire with Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="about us.html">About Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div>
+      <h2 class="display-4 mb-4">Welcome to HOTEL R.K REGENCY</h2>
+      <a href="REGISTRATION.html" class="btn btn-primary btn-lg me-3">Book Now</a>
+      <a href="LOGIN.html" class="btn btn-outline-light btn-lg">Login</a>
+    </div>
+    <br>
+    <br>
+
+    <!-- Availability Form -->
+    <div class="container availability-form mt-4">
+      <h4 class="text-center mb-3">Check Availability</h4>
+      <form class="row g-3 justify-content-center">
+        <div class="col-md-3">
+          <input type="text" class="form-control" placeholder="Destination" required>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h2 class="display-4 mb-4">Welcome to HOTEL R.K REGENCY</h2>
-            <a href="REGISTRATION.html" class="btn btn-primary btn-lg me-3">Book Now</a>
-            <a href="LOGIN.html" class="btn btn-outline-light btn-lg">Login</a>
+        <div class="col-md-2">
+          <input type="date" class="form-control" required>
         </div>
-        <div class="container1">
-            <h2 class="text-center mb-4">Check Availability</h2>
-            <form class="row g-3 justify-content-center">
-                <div class="col-md-3">
-                    <input type="text" class="form-control" placeholder="Destination" required>
-                </div>
-                <div class="col-md-2">
-                    <input type="date" class="form-control" required>
-                </div>
-                <div class="col-md-2">
-                    <input type="date" class="form-control" required>
-                </div>
-                <div class="col-md-2">
-                    <input type="number" class="form-control" placeholder="Guests" required>
-                </div>
-                <div class="col-md-2">
-                    <button type="submit" class="btn btn-success w-100">Search</button>
-                </div>
-            </form>
+        <div class="col-md-2">
+          <input type="date" class="form-control" required>
         </div>
-    </section>
-
-    <!-- Booking Form Section -->
-    <section id="booking-form" class="py-5 bg-light">
-
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-4 mt-5">
-        <p>Contact us at: contact@hotel.com | +123 456 7890</p>
-        <div>
-            <a href="#" class="text-white me-3">Facebook</a>
-            <a href="#" class="text-white me-3">Instagram</a>
-            <a href="#" class="text-white">Twitter</a>
+        <div class="col-md-2">
+          <input type="number" class="form-control" placeholder="Guests" required>
         </div>
-    </footer>
+        <div class="col-md-2">
+          <button type="submit" class="btn btn-success w-100">Search</button>
+        </div>
+      </form>
+    </div>
+  </section>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-4 mt-5">
+    <p>Contact us at: contact@hotel.com | +123 456 7890</p>
+    <div>
+      <a href="#" class="text-white me-3">Facebook</a>
+      <a href="#" class="text-white me-3">Instagram</a>
+      <a href="#" class="text-white">Twitter</a>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
