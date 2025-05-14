@@ -1,235 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banquets R.K Regency</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>/* General Body Styling */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #f4f4f4;
-        }
-        /* Header Section Styling */
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            height: auto;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Banquets R.K Regency</title>
 
-        header nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            font-size: 20px;
-        }
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
 
-        header nav img {
-            height: 100px;
-            width: auto;
-        }
-
-        header nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        header nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        header nav h1{
-            /* color: red; */
-            transform: translate(-50);
-        }
-        .header nav h1 p{
-            font-size: 18px;
-            margin-top: 10px;
-        }
-
-        header nav ul li a:hover {
-            color: #FFD700;
-        }
-        /* Banquet Halls Section */
-        .banquet-halls {
-            display: flex;
-            justify-content: space-around;
-            margin: 40px 20px;
-            flex-wrap: wrap;
-        }
-        
-        .banquet-hall {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-            width: 30%;
-            overflow: hidden;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-        
-        .banquet-hall:hover {
-            transform: translateY(-5px);
-        }
-        
-        .banquet-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .banquet-hall h2 {
-            margin: 20px 0;
-            font-size: 24px;
-            color: #333;
-        }
-        
-        .description {
-            color: #555;
-            font-size: 16px;
-            padding: 0 20px 20px;
-        }
-        .modal {
-      display: none;
-      position: fixed;
-      top: 10%;
-      left: 20%;
-      width: 60%;
-      background: white;
-      border: 2px solid #000;
-      z-index: 1000;
-      padding: 20px;
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1950&q=80');
     }
-    .modal img {
-      width: 100%;
-      max-height: 300px;
+    .navbar-brand img {
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .card-img-top {
+      height: 200px;
       object-fit: cover;
     }
-    .gallery {
-      display: flex;
-      gap: 10px;
-      margin-top: 10px;
+
+    .card-title {
+      font-size: 24px;
+      color: #333;
     }
-    .gallery img {
-      width: 100px;
-      height: 60px;
-      object-fit: cover;
-      cursor: pointer;
-      border: 2px solid transparent;
+
+    .card-text {
+      color: #555;
     }
-    .gallery img.active {
-      border-color: #4CAF50;
-    }
-    .overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
-      z-index: 999;
-    }
-    
+
     .price {
-            display: block;
-            font-size: 18px;
-            font-weight: bold;
-            color: #c0392b;
-            margin-bottom: 10px;
-        }
-        .btn {
-            text-decoration: none;
-            background: #cf1f4e;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
+      font-size: 18px;
+      font-weight: bold;
+      color: #c0392b;
+    }
 
-        .btn:hover {
-            background: #cf1f4e;
-        }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
 
-        
-        /* Footer Section */
-        .footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        
-        .footer p {
-            margin: 0;
-            font-size: 14px;
-        }
-        </style>
+    .navbar-brand img {
+      height: 60px;
+    }
+  </style>
 </head>
 <body>
-    <header class="header">
-        <nav> 
-            <img src="https://static.wixstatic.com/media/7c49ed_7adc63083a3743eeb6b588e60d288f02~mv2.png/v1/fill/w_200,h_212,al_c,q_85,usm_2.00_1.00_0.00,enc_avif,quality_auto/LOGO%2520NO%2520BACKGROUND_edited.png"
-                  alt="Hotel Logo">
-        <h1>Hotel R.K Regency Banquets</h1>
-        <p>Elegant Banquet Halls for Your Special Events</p>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="banquets.html">Banquets</a></li>
-            <li><a href="room.html">Rooms</a></li>
-            <li><a href="enquire with us.html">Enquire with Us</a></li>
-            <li><a href="about us.html">About Us</a></li>
-        </ul>
-    </nav>
-    </header>
 
-    <section class="banquet-halls">
-        <div class="banquet-hall">
-            <img src="https://padmahotelsemarang.com/images/events/pandanaran-grand-ballroom-thumb1.jpg" alt="Banquet Hall 1" class="banquet-img">
-            <h2>Grand Ballroom</h2>
-            <p class="description">A luxurious ballroom with the capacity to host up to 500 guests. Perfect for weddings and large gatherings.</p>
-            <a href="Visit1.html" class="btn">visit</a>
-            <span class="price">₹95,000</span>
-            <a href="book banquets hall.html" class="btn">Book Now</a>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="https://static.wixstatic.com/media/7c49ed_7adc63083a3743eeb6b588e60d288f02~mv2.png/v1/fill/w_200,h_212,al_c,q_85,usm_2.00_1.00_0.00,enc_avif,quality_auto/LOGO%2520NO%2520BACKGROUND_edited.png"
+        alt="Hotel Logo">
+      <span class="fw-bold">HOTEL R.K REGENCY</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Banquets</a></li>
+        <li class="nav-item"><a class="nav-link" href="room.html">Rooms</a></li>
+        <li class="nav-item"><a class="nav-link" href="enquire with us.html">Enquire with Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="about us.html">About Us</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Banquet Halls -->
+  <section class="container my-5">
+    <div class="row g-4">
+      <!-- Hall 1 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow">
+          <img
+            src="https://padmahotelsemarang.com/images/events/pandanaran-grand-ballroom-thumb1.jpg"
+            class="card-img-top"
+            alt="Grand Ballroom"
+          />
+          <div class="card-body text-center">
+            <h5 class="card-title">Grand Ballroom</h5>
+            <p class="card-text">
+              A luxurious ballroom with the capacity to host up to 500 guests. Perfect for weddings and large gatherings.
+            </p>
+            <span class="price d-block mb-2">₹95,000</span>
+            <a href="Visit1.html" class="btn btn-primary me-2">Visit</a>
+            <a href="book banquets hall.html" class="btn btn-success">Book Now</a>
+          </div>
         </div>
+      </div>
 
-        <div class="banquet-hall">
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/543806766.jpg?k=7e33db4a096f2787c40d1c96e6d9e43f69be4008c617442889362e107233f7b1&o=&hp=1" alt="Banquet Hall 2" class="banquet-img">
-            <h2>Garden Suite</h2>
-            <p class="description">A beautiful indoor-outdoor venue with a serene garden view & capacity to host up to 400 guest, ideal for intimate celebrations.</p>
-            <a href="Visit2.html" class="btn">visit</a>
-            <span class="price">₹1,15,000</span>
-            <a href="book banquets hall.html" class="btn">Book Now</a>
+      <!-- Hall 2 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow">
+          <img
+            src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/543806766.jpg?k=7e33db4a096f2787c40d1c96e6d9e43f69be4008c617442889362e107233f7b1&o=&hp=1"
+            class="card-img-top"
+            alt="Garden Suite"
+          />
+          <div class="card-body text-center">
+            <h5 class="card-title">Garden Suite</h5>
+            <p class="card-text">
+              A beautiful indoor-outdoor venue with a serene garden view & capacity to host up to 400 guests, ideal for intimate celebrations.
+            </p>
+            <span class="price d-block mb-2">₹1,15,000</span>
+            <a href="Visit2.html" class="btn btn-primary me-2">Visit</a>
+            <a href="book banquets hall.html" class="btn btn-success">Book Now</a>
+          </div>
         </div>
+      </div>
 
-        <div class="banquet-hall">
-            <img src="https://images.stockcake.com/public/6/6/a/66a4c749-4134-404c-8631-3b39b3820175_large/elegant-gala-dinner-stockcake.jpg" alt="Banquet Hall 3" class="banquet-img">
-            <h2>Royal Hall</h2>
-            <p class="description">A stunning hall with elegant décor, perfect for corporate events, conferences,and gala dinners with the capacity to host up to 600 guest</p>
-            <a href="Visit3.html" class="btn">visit</a>
-            <span class="price">₹1,50,000</span>
-            <a href="book banquets hall.html" class="btn">Book Now</a>
-            </div>
-    </section>
+      <!-- Hall 3 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow">
+          <img
+            src="https://images.stockcake.com/public/6/6/a/66a4c749-4134-404c-8631-3b39b3820175_large/elegant-gala-dinner-stockcake.jpg"
+            class="card-img-top"
+            alt="Royal Hall"
+          />
+          <div class="card-body text-center">
+            <h5 class="card-title">Royal Hall</h5>
+            <p class="card-text">
+              A stunning hall with elegant décor, perfect for corporate events, conferences, and gala dinners with capacity to host up to 600 guests.
+            </p>
+            <span class="price d-block mb-2">₹1,50,000</span>
+            <a href="Visit3.html" class="btn btn-primary me-2">Visit</a>
+            <a href="book banquets hall.html" class="btn btn-success">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer class="footer">
-        <p>© 2025 Hotel XYZ | All rights reserved</p>
-    </footer>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Hotel XYZ | All rights reserved</p>
+  </footer>
 
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
