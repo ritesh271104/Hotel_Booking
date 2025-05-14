@@ -25,7 +25,7 @@
     }
 
     .hero {
-      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1950&q=80') no-repeat center center;
+      background: url('https://dc-s3.s3.us-gov-east-1.amazonaws.com/61deee697ca2c79e7c50d895_dreamcatcher.hotels.exterior.cherokee.jpg') no-repeat center center;
       background-size: cover;
       height: 100vh;
       display: flex;
@@ -55,6 +55,39 @@
       text-decoration: none;
     }
   </style>
+  <style>
+    /* Additional custom styles (optional) */
+    body {
+      background-color: #f4f4f4;
+    }
+
+    .register-container {
+      margin-top: 50px;
+      padding: 30px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #0056b3;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #004085;
+    }
+  </style>
 </head>
 
 <body>
@@ -62,7 +95,8 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
     <a class="navbar-brand d-flex align-items-center" href="#">
-      <img src="https://static.wixstatic.com/media/7c49ed_7adc63083a3743eeb6b588e60d288f02~mv2.png/v1/fill/w_200,h_212,al_c,q_85,usm_2.00_1.00_0.00,enc_avif,quality_auto/LOGO%2520NO%2520BACKGROUND_edited.png"
+      <img
+        src="https://static.wixstatic.com/media/7c49ed_7adc63083a3743eeb6b588e60d288f02~mv2.png/v1/fill/w_200,h_212,al_c,q_85,usm_2.00_1.00_0.00,enc_avif,quality_auto/LOGO%2520NO%2520BACKGROUND_edited.png"
         alt="Hotel Logo">
       <span class="fw-bold">HOTEL R.K REGENCY</span>
     </a>
@@ -75,7 +109,8 @@
         <li class="nav-item"><a class="nav-link" href="banquets.html">Banquets</a></li>
         <li class="nav-item"><a class="nav-link" href="room.html">Rooms</a></li>
         <li class="nav-item"><a class="nav-link" href="enquire with us.html">Enquire with Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="about us.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="about us.html">About us</a></li>
+        <li class="nav-item" style="display: none;"><a class="nav-link" href="#">Logout</a></li>
       </ul>
     </div>
   </nav>
@@ -84,11 +119,11 @@
   <section class="hero">
     <div>
       <h2 class="display-4 mb-4">Welcome to HOTEL R.K REGENCY</h2>
-      <a href="REGISTRATION.html" class="btn btn-primary btn-lg me-3">Book Now</a>
-      <a href="LOGIN.html" class="btn btn-outline-light btn-lg">Login</a>
+      <a href="#" class="btn btn-outline-light btn-lg" data-bs-toggle="modal"
+        data-bs-target="#RegisterModal">Register</a>
+      <a href="#" class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
     </div>
-    <br>
-    <br>
+    <br><br>
 
     <!-- Availability Form -->
     <div class="container availability-form mt-4">
@@ -123,8 +158,153 @@
     </div>
   </footer>
 
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" required />
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" required />
+            </div>
+            <div class="mb-3 text-end">
+              <a href="forget.html" target="_blank" class="text-decoration-none">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="RegisterModal" tabindex="-1" aria-labelledby="RegisterModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="RegisterModalLabel">Register</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="Register">
+            <!-- Full Name -->
+            <div class="mb-3">
+              <label for="full-name" class="form-label">Full Name</label>
+              <input type="text" id="full-name" name="full_name" class="form-control" required placeholder="John Doe">
+            </div>
+
+            <!-- Email Address -->
+            <div class="mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" id="email" name="email" class="form-control" required
+                placeholder="johndoe@example.com">
+            </div>
+
+            <!-- Phone Number -->
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="tel" id="phone" name="phone" class="form-control" required placeholder="+1 234 567 890">
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" id="password" name="password" class="form-control" required placeholder="********">
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="mb-3">
+              <label for="confirm-password" class="form-label">Confirm Password</label>
+              <input type="password" id="confirm-password" name="confirm_password" class="form-control" required
+                placeholder="********">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn btn">Register</button>
+          </form>
+
+          <p class="text-center mt-3">Already have an account? <a href="#">Login here</a></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+   <script>
+        document.getElementById("otpForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const sendBtn = document.getElementById('send_otp');
+            sendBtn.disabled = true;
+            // sendBtn.style.cursor = "not-allowed";
+
+            const formData = new FormData(this);
+
+            fetch("send_otp.php", {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.text())
+                .then(data => {
+                    const trimmedData = data.trim();
+                    if (trimmedData === "success") {
+                        alert('✅ OTP sent successfully!');
+                        sendBtn.disabled = true;
+                        document.getElementById("otp_section").style.display = "block";
+                    } else if (trimmedData === "not_found") {
+                        alert('❌ Email not found in the system.');
+                        sendBtn.disabled = false;
+
+                    } else {
+                        alert('❌ Failed to send OTP: ' + trimmedData);
+                        sendBtn.disabled = false;
+                    }
+                })
+                .catch(error => {
+                    alert('❌ Error: ' + error);
+                    sendBtn.disabled = false;
+                    // sendBtn.style.cursor = "pointer";
+                });
+
+        });
+        document.getElementById("otp").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const sendBt = document.getElementById('vr');
+            sendBt.disabled = true;
+            // sendBt.style.cursor = "not-allowed";
+
+            const formData = new FormData(this);
+
+            fetch("verify_otp.php", {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.text())
+                .then(data => {
+                    if (data.trim() === "success") {
+                        alert('✅ Password Update  successfully!');
+                        window.close();
+                    } else {
+                        alert('❌ Invalid OTP. Please try again.');
+                        sendBt.disabled = false;
+                    }
+                })
+                .catch(error => {
+                    alert('Error: ' + error);
+                    sendBt.disabled = false;
+                });
+        });
+    </script>
+
 </body>
 
 </html>
