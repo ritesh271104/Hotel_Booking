@@ -186,29 +186,36 @@
     </div>
   </div>
 
-  <div class="modal fade" id="RegisterModal" tabindex="-1" aria-labelledby="RegisterModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="RegisterModalLabel">Register</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form id="Register">
+  <!-- Register & OTP Modal -->
+<div class="modal fade" id="RegisterModal" tabindex="-1" aria-labelledby="RegisterModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <!-- Header -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="RegisterModalLabel">Register</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+
+        <!-- Registration Form -->
+        <form id="RegisterForm">
+          <div id="registration-section">
             <!-- Full Name -->
             <div class="mb-3">
               <label for="full-name" class="form-label">Full Name</label>
               <input type="text" id="full-name" name="full_name" class="form-control" required placeholder="John Doe">
             </div>
 
-            <!-- Email Address -->
+            <!-- Email -->
             <div class="mb-3">
               <label for="email" class="form-label">Email Address</label>
-              <input type="email" id="email" name="email" class="form-control" required
-                placeholder="johndoe@example.com">
+              <input type="email" id="email" name="email" class="form-control" required placeholder="johndoe@example.com">
             </div>
 
-            <!-- Phone Number -->
+            <!-- Phone -->
             <div class="mb-3">
               <label for="phone" class="form-label">Phone Number</label>
               <input type="tel" id="phone" name="phone" class="form-control" required placeholder="+1 234 567 890">
@@ -223,20 +230,28 @@
             <!-- Confirm Password -->
             <div class="mb-3">
               <label for="confirm-password" class="form-label">Confirm Password</label>
-              <input type="password" id="confirm-password" name="confirm_password" class="form-control" required
-                placeholder="********">
+              <input type="password" id="confirm-password" name="confirm_password" class="form-control" required placeholder="********">
             </div>
 
             <!-- Submit Button -->
-            <button type="submit" class="submit-btn btn">Register</button>
-          </form>
+            <button type="submit" class="submit-btn btn btn-primary w-100">Send OTP</button>
+          </div>
 
-          <p class="text-center mt-3">Already have an account? <a href="#">Login here</a></p>
-          </form>
-        </div>
+          <!-- OTP Verification Section (Hidden initially) -->
+          <div id="otp-section" style="display: none;">
+            <div class="mb-3">
+              <label for="otp" class="form-label">Enter OTP</label>
+              <input type="text" id="otp" name="otp" class="form-control" placeholder="Enter the OTP" required>
+            </div>
+            <button type="button" id="verify-otp-btn" class="btn btn-success w-100">Verify OTP</button>
+          </div>
+        </form>
+
+        <p class="text-center mt-3">Already have an account? <a href="#">Login here</a></p>
       </div>
     </div>
   </div>
+</div>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -304,7 +319,7 @@
                 });
         });
     </script>
-
+  
 </body>
 
 </html>
