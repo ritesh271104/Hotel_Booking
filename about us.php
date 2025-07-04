@@ -8,9 +8,19 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
-    body {
-      background-color: #f4f4f4;
-    }
+ body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/050/029/546/non_2x/minimalist-reception-area-with-a-wooden-counter-warm-lighting-and-lush-greenery-photo.jpg");
+  background-repeat: no-repeat;
+  background-position: top center; /* 👈 Better visibility from top */
+  background-attachment: fixed;
+  background-size: 100% auto; /* 👈 Width full 100%, height auto = saaf aur wide */
+}
+
 
     .team-member img {
       border-radius: 50%;
@@ -24,6 +34,7 @@
       color: #fff;
       padding: 10px 0;
       text-align: center;
+      margin-top: 200px;
     }
     .navbar-brand img {
       height: 50px;
@@ -48,10 +59,10 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="banquets.html">Banquets</a></li>
-        <li class="nav-item"><a class="nav-link" href="room.html">Rooms</a></li>
-        <li class="nav-item"><a class="nav-link" href="enquire with us.html">Enquire with Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="banquets.php">Banquets</a></li>
+        <li class="nav-item"><a class="nav-link" href="room.php">Rooms</a></li>
+        <li class="nav-item"><a class="nav-link" href="enquire with us.php">Enquire with Us</a></li>
         <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
       </ul>
     </div>
