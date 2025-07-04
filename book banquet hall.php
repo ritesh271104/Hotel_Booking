@@ -1,3 +1,24 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: index.html");
+    exit();
+}
+
+// Get price directly from URL
+$price = $_GET['price'] ?? null;
+$_SESSION['price']=$price;
+
+if ($price !== null) {
+    echo "<script>console.log('Price from URL: " . $price . "');</script>";
+} else {
+    echo "<script>console.log('Price not found in URL');</script>";
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,11 +34,11 @@
 
   <style>
     body {
-      background-color: #f8f8f8;
+      background-color:  #a8e4f0;
     }
     .booking-container {
       max-width: 600px;
-      margin: 50px auto;
+      margin: 150px auto;
       background-color: #fff;
       padding: 30px;
       border-radius: 10px;
@@ -29,7 +50,7 @@
 
   <div class="container booking-container">
     <h2 class="text-center mb-4">HOTEL R.K REGENCY BANQUET BOOKING</h2>
-    <form id="bookingForm">
+    <form id="bookingForm" action="banquetbook.php" method="post">
       <div class="mb-3">
         <label for="name" class="form-label">Full Name:</label>
         <input type="text" class="form-control" id="name" required />
@@ -40,16 +61,7 @@
         <input type="email" class="form-control" id="email" required />
       </div>
 
-      <div class="mb-3">
-        <label for="roomType" class="form-label">Hotel Room Type:</label>
-        <select class="form-select" id="roomType">
-          <option value="none">No Room</option>
-          <option value="single">Single Room</option>
-          <option value="double">Double Room</option>
-          <option value="suite">Suite</option>
-        </select>
-      </div>
-
+     
       <div class="mb-3">
         <label for="hallType" class="form-label">Banquet Hall:</label>
         <select class="form-select" id="hallType">
@@ -70,6 +82,9 @@
         <input type="date" class="form-control" id="checkOut" />
       </div>
 
+ 
+      
+
       <button type="submit" class="btn btn-primary w-100">Book Now</button>
     </form>
   </div>
@@ -77,20 +92,6 @@
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <script>
-    document.getElementById("bookingForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const room = document.getElementById("roomType").value;
-      const hall = document.getElementById("hallType").value;
-      const checkIn = document.getElementById("checkIn").value;
-      const checkOut = document.getElementById("checkOut").value;
-
-      alert(
-        `Booking Submitted!\n\nName: ${name}\nEmail: ${email}\nRoom: ${room}\nHall: ${hall}\nCheck-in: ${checkIn}\nCheck-out: ${checkOut}`
-      );
-    });
-  </script>
+ 
 </body>
 </html>
