@@ -88,13 +88,14 @@ header nav ul li a:hover {
 }
 
 .cta-button:hover {
-    background-color: #ffcc00;
+    background-color: #FFD700;
 }
 
 #booking-form {
     padding: 50px 20px;
     text-align: center;
     background-color: #f4f4f9;
+    background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20220311/pngtree-lobby-hotel-five-star-image_990203.jpg");
 }
 
 #booking-form h2 {
@@ -128,37 +129,17 @@ header nav ul li a:hover {
 }
 
 #booking-form button:hover {
-    background-color: #ffcc00;
+    background-color: #b3fcb4;
 }
 
-.featured-rooms {
-    display: flex;
-    justify-content: space-around;
-    padding: 50px 20px;
-    background-color: #fff;
-}
 
-.featured-rooms .room {
-    text-align: center;
-    max-width: 300px;
-}
-
-.featured-rooms .room img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-.featured-rooms .room p {
-    font-size: 1rem;
-    margin-top: 10px;
-}
 
 footer {
     background-color: #333;
     color: #fff;
     padding: 20px 0;
     text-align: center;
+    
 }
 
 footer .social-links {
